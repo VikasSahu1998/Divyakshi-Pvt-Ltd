@@ -1,0 +1,186 @@
+@import url(https://fonts.googleapis.com/css?family=Cherry+Swash);
+
+.img1 {
+  width: 100%;
+  height: 600px;
+
+}
+
+.companyName {
+  font-size: 40px;
+  line-height: 1%;
+  padding-bottom: 10%;
+ 
+  font-family: 'Tangerine', serif;
+
+  // padding: 500px 0;
+  color: #c70dd4;
+  
+}
+
+.Details {
+  display: flex;
+margin: 0;
+  color: #1414dd;
+  margin-bottom: 10%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.navbar-brand img {
+  width: 5%;
+}
+
+
+.link {
+  position: fixed;
+  padding: 23px 40px;
+  right: -100px;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: rotate(-90deg);
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFF;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .1s ease-in-out;
+}
+
+.map {
+  height: 500px;
+  width: 400px;
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .map {
+    height: 280px;
+    width: 245px;
+
+  }
+}
+
+.img2 {
+  width: 50%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.floating_btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+
+}
+
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+  }
+}
+
+.contact_icon {
+  background-color: #42db87;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translatey(0px);
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 0 0 #42db87;
+  -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  font-weight: normal;
+  font-family: sans-serif;
+  text-decoration: none !important;
+  transition: all 300ms ease-in-out;
+}
+
+
+.text_icon {
+  margin-top: 8px;
+  color: #707070;
+  font-size: 13px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.navbar .navbar-brand {
+  font-size: 30px;
+}
+
+.navbar .nav-item {
+  padding: 10px 20px;
+}
+
+.navbar .nav-link {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+
+.navbar-nav a:hover::before {
+  transform: scale3d(1, 1, 1);
+}
+
+.navbar-nav a::before {
+  transform-origin: 50% 50%;
+  background: #F06292;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navbar-nav a {
+  font-size: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(14, 14, 14);
+  display: block;
+  position: relative;
+  padding: 4px 0;
+}
+
+.navbar-nav a::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgb(53, 61, 175);
+  transition: 0.5s transform ease;
+  transform: scale3d(0, 1, 1);
+  transform-origin: 0 50%;
+}
+
+mat-card:hover {
+  transform: scale(1.1);
+}
+mat-card {
+  transition: transform 0.5s;
+  border-radius: 3%;
+}

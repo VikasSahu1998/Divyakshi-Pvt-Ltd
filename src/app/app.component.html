@@ -1,136 +1,343 @@
-<nav class="navbar navbar-expand-lg  ">
+<div class="container">
 
-    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon></button>
-    <!-- <span>Welcome, {{user}}</span> -->
+  <nav class="navbar navbar-expand-lg color-primary">
+
+    <a class="navbar-brand" href="#"><img src="\assets\logo.jpg"> Divyakshi Pvt. Ltd</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <span class="example-spacer"></span>
-    <button mat-button (click)="Onhome()">Home</button>
-    <button mat-button [matMenuTriggerFor]="menu">Categories</button>
+    <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
 
-    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>apps</mat-icon>
-    </button> -->
-    <mat-menu #menu="matMenu">
-        <table>
-            <tr>
-                <td routerLink="/ComingSoon"> <img src="/assets/doctor.png" class="img">
-                    <h3 class="text">Doctor</h3>
-                </td>
-                <td routerLink="/ComingSoon"> <img src="/assets/engineer.png" class="img">
-                    <h3 class="text">Engineer</h3>
-                </td>
-                <td routerLink="/ComingSoon"> <img src="/assets/lawyer.png" class="img">
-                    <h3 class="text">Lawyer</h3>
-                </td>
-            </tr>
+      <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SERVICE
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#VIDEOGRAPHY">VIDEOGRAPHY</a></li>
+            <li><a class="dropdown-item" href="#Photography">Photography</a></li>
+            <li><a class="dropdown-item" href="#Designing">Designing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
 
-            <tr>
-                <td routerLink="/ComingSoon"> <img src="/assets/doctor.png" class="img">
-                    <h3 class="text">Doctor</h3>
-                </td>
-                <td routerLink="/ComingSoon"> <img src="/assets/engineer.png" class="img">
-                    <h3 class="text">Engineer</h3>
-                </td>
-                <td routerLink="/ComingSoon"> <img src="/assets/lawyer.png" class="img">
-                    <h3 class="text">Lawyer</h3>
-                </td>
-            </tr>
+        <!-- <li class="nav-item">
+          <mat-slide-toggle [(ngModel)]="isChecked" (change)="changed($event)">
+            <mat-icon>{{ mode }}</mat-icon>
+          </mat-slide-toggle>
+        </li> -->
 
-            <tr>
-                <td routerLink="/ComingSoon"> <img src="/assets/doctor.png" class="img">
-                    <h3 class="text">Doctor</h3>
-                </td>
-                <td routerLink="/ComingSoon"> <img src="/assets/engineer.png" class="img">
-                    <h3 class="text">Engineer</h3>
-                </td>
-                <td routerLink="/ComingSoon"> <img src="/assets/lawyer.png" class="img">
-                    <h3 class="text">Lawyer</h3>
-                </td>
-            </tr>
+      </ul>
+    </div>
 
-        </table>
-        <mat-divider></mat-divider>
-        <div class="text"><button mat-button (click)="Oncategories()" color="primary">View All Categories</button></div>
+  </nav>
+</div>
 
-    </mat-menu>
-    <button mat-raised-button color="primary" class="example-ripple-container mat-elevation-z4" (click)="Onsignin()"
-        matRipple>{{btnVal}}</button>
-</nav>
 
-<mat-sidenav-container class="example-container">
-    <mat-sidenav #drawer mode="side">
-        <mat-nav-list>
-            <a mat-list-item routerLink="/"><mat-icon matListItemIcon> home</mat-icon>Home</a>
-            <a mat-list-item routerLink="/Shopping"><mat-icon matListItemIcon> shopping_cart</mat-icon>Shopping</a>
-            <a mat-list-item routerLink="/AirTicket"><mat-icon matListItemIcon> airplanemode_active</mat-icon>Air
-                Ticket</a>
-            <a mat-list-item routerLink="/On-Demand-Services_fil"><mat-icon matListItemIcon>
-                    perm_data_setting</mat-icon>On Demand Service</a>
-            <a mat-list-item routerLink="/Loans"><mat-icon matListItemIcon> attach_money</mat-icon>Loan</a>
-            <a mat-list-item routerLink="/AutoCare"><mat-icon matListItemIcon> settings</mat-icon>Auto Care</a>
-            <a mat-list-item routerLink="/Train"><mat-icon matListItemIcon> train</mat-icon>Train</a>
-            <a mat-list-item routerLink="/Book"><mat-icon matListItemIcon> book</mat-icon>Book</a>
-            <a mat-list-item routerLink="/AutoMobile"><mat-icon matListItemIcon> local_car_wash</mat-icon>Auto
-                Mobile</a>
-            <a mat-list-item routerLink="/BabyCare"><mat-icon matListItemIcon> child_care</mat-icon>Baby Care</a>
-            <a mat-list-item routerLink="/bill"><mat-icon matListItemIcon> money</mat-icon>Bills & Recharge</a>
-            <a mat-list-item routerLink="/Book-hotel"><mat-icon matListItemIcon> hotel</mat-icon>Book Hotels</a>
-            <a mat-list-item routerLink="/pest-control"><mat-icon matListItemIcon> adb_control</mat-icon>Pest Control</a>
-            <a mat-list-item routerLink="/bus"><mat-icon matListItemIcon> directions_bus</mat-icon>Bus</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> directions_car</mat-icon>Cab & Car
-                Rentals</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> kitchen</mat-icon>Caterers</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> library_music</mat-icon>Dance &
-                Music</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> fitness_center</mat-icon>Fitness</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon>
-                    airplanemode_active</mat-icon>Flights</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Flowers</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> home </mat-icon>Home Decor</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> home</mat-icon>home Improvement</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_hospital</mat-icon>Hospitals</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>House
-                Keeping</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Industrial
-                Product</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Insurance</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Interior
-                Designer</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>International
-                Sim Card</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon>
-                    signal_wifi_4_bar</mat-icon>Internet</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Jobs</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Jewellery</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Labs</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> language</mat-icon>Language Classes</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Medical</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> kitchen</mat-icon>Modular Kitchen</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Packers &
-                Movers</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Party</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Personal
-                Care</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> pets</mat-icon>Pet And Pet Care</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Play School</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> settings</mat-icon>Repairs</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon>
-                    restaurant_menu</mat-icon>Restaurant</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> security</mat-icon>security Service</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Sports
-                Coach</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Tranning
-                Institute</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon>
-                    local_florist</mat-icon>Transporters</a>
-            <a mat-list-item routerLink="/ComingSoon"><mat-icon matListItemIcon> local_florist</mat-icon>Wedding</a>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content (click)="drawer.close()">
-        <div style="height: 90vh;"> 
-            <router-outlet></router-outlet>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" dark="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" *ngFor=" let data of loop">
+              <img src="{{data.img}}" class="d-block" height="600px" width="100%" style="border-radius: 3%;">
+              <div class="carousel-caption ">
+
+                <!-- <h1 class="companyName">HIRE PROFESSIONAL PHOTOGRAPHER<br><br> EVERYTIME EVERYWHERE </h1> -->
+
+                <div class="companyName">
+                  <h1 class="companyName">{{data.head1}}</h1>
+                  <h1 class="companyName">{{data.head2}}</h1>
+                </div>
+                <div class="Details carousel-caption md-4 ">
+                 <h3 class="me-3"> {{data.li}}</h3>
+                  <h3 class="me-3">{{data.li1}}</h3>
+                  <h3 class="me-3"> {{data.li2}}</h3>
+                 <h3 class="me-3">{{data.li3}}</h3>
+
+                </div>
+
+                <button mat-fab extended color="warn" class="mt-4 md-4" (click)="openDialog()">
+                  {{data.btn}}
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div><br><br>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-6 mt-5" align="center">
+      <img src="\assets\7309681.png" width="50%">
+    </div>
+
+    <div class="col-lg-6 mt-5" *ngFor="let paragraph of AboutPage">
+      <div class="center">
+        <h1 align="center" id="about">{{paragraph.Title}}</h1>
+      </div>
+      <div class="center">
+        <h3 align="left">{{paragraph.Description}}</h3>
+      </div>
+      <div class="center">
+        <h3 align="left">{{paragraph.Description1}}</h3>
+      </div>
+      <div class="center">
+        <h3 align="left">{{paragraph.Description2}}</h3>
+      </div>
+      <div class="center">
+        <h3 align="left">{{paragraph.Description3}}</h3>
+      </div>
+      <div class="center">
+        <h3 align="left">{{paragraph.Description4}}</h3>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- </div> -->
+
+<div class="container">
+  <H1 ALIGN="CENTER" class="mt-5"><B id="service" id="VIDEOGRAPHY"><u>VIDEOGRAPHY SERVICES</u></B></H1>
+  <div class="row row-cols-1 row-cols-md-3 g-4  pb-5 mt-1">
+    <div class="col" *ngFor="let card of cards">
+      <mat-card class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">
+            <mat-card-content>
+              <h1>{{card.Title}}</h1>
+            </mat-card-content>
+          </h2>
+          <p class="card-text">{{card.Description}}</p>
         </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
-<app-tawk></app-tawk>
-<app-footer></app-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <H1 ALIGN="CENTER" class="mt-5"><B id="Photography"><u>PHOTOGRAPHY</u> </B></H1>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+    <div class="col" *ngFor="let card1 of cards1">
+      <div class="card h-100">
+        <mat-card class="card-body">
+          <img src="{{card1.image}}" class="cardimg">
+          <h2 class="card-title">
+            <h1>{{card1.Title}}</h1>
+          </h2>
+          <p class="card-text">{{card1.Description}}</p>
+
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <H1 ALIGN="CENTER" class="mt-5"><B id="Designing"><U>DESIGNING SERVICES</U></B></H1>
+  <div class="row row-cols-1 row-cols-md-3 g-4  pb-5 mt-1">
+    <div class="col" *ngFor="let design of designing">
+      <mat-card class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">
+            <mat-card-content>
+              <h1>{{design.Title}}</h1>
+            </mat-card-content>
+          </h2>
+          <p class="card-text">{{design.Description}}</p>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+<div class="container bottom ">
+  <div class="row m-0 p-0">
+    <div class="col-lg-6 mt-5 map me-5">
+      Google Map
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234447.6699590298!2d85.18123849568553!3d23.343142495931527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1676782691349!5m2!1sen!2sin"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4 mt-5 me-5">
+      <div class="container">
+        <form [formGroup]="contactForm" (ngSubmit)="adddetail()" novalidate class="d-flex-center">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title id="contact">Contact Us</mat-card-title>
+
+            </mat-card-header>
+            <span><br></span>
+            <mat-card-content>
+              <div class="example-container">
+                <div>
+                  <!-- input type Name -->
+                  <mat-form-field appearance="outline">
+                    <mat-label>Your Full Name</mat-label>
+                    <input matInput placeholder="John kerry" formControlName="name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                    <mat-error
+                      *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched) && contactForm.get('name')?.errors?.required">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div> <!-- input type Number -->
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Your Phone Number</mat-label>
+                    <span matPrefix>+91 &nbsp;</span>
+                    <input matInput placeholder="Phone Number" formControlName="PhoneNumber">
+                    <mat-icon matSuffix>call</mat-icon>
+
+                    <mat-error
+                      *ngIf="!contactForm.get('PhoneNumber')?.errors?.required && (contactForm.get('PhoneNumber')?.errors?.pattern)">
+                      Please enter valid Number
+                    </mat-error>
+                    <mat-error
+                      *ngIf="contactForm.get('PhoneNumber')?.invalid && (contactForm.get('PhoneNumber')?.dirty || contactForm.get('PhoneNumber')?.touched) && contactForm.get('PhoneNumber')?.errors?.required">
+                      Phone number is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <!-- input type email -->
+                  <mat-form-field appearance="outline">
+                    <mat-label>Your E-Mail</mat-label>
+                    <input matInput placeholder="E-Mail" formControlName="email">
+                    <mat-icon matSuffix>alternate_email</mat-icon>
+                    <mat-error
+                      *ngIf="!contactForm.get('email')?.errors?.required && (contactForm.get('email')?.errors?.pattern)">
+                      Please enter a valid <strong>email address</strong>
+                    </mat-error>
+                    <mat-error
+                      *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.required">
+                      Email is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <!-- input type Name -->
+                  <mat-form-field appearance="outline">
+                    <mat-label>Your Subject</mat-label>
+                    <input matInput placeholder="John kerry" formControlName="subject">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                    <mat-error
+                      *ngIf="contactForm.get('subject')?.invalid && (contactForm.get('subject')?.dirty || contactForm.get('subject')?.touched) && contactForm.get('subject')?.errors?.required">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <!-- input type Name -->
+                  <mat-form-field appearance="outline">
+                    <mat-label>Your Message</mat-label>
+                    <input matInput placeholder="John kerry" formControlName="msg">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                    <mat-error
+                      *ngIf="contactForm.get('msg')?.invalid && (contactForm.get('msg')?.dirty || contactForm.get('msg')?.touched) && contactForm.get('msg')?.errors?.required">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <mat-divider></mat-divider>
+
+                <!-- button Submit -->
+                <div align="CENTER">
+                  <br>
+                  <button type="submit" (click)="adddetail()" mat-raised-button color="primary"
+                    mat-button>Submit</button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-2 mt-5">
+      <div class="vertical">
+        <hr>
+      </div>
+      <div style="margin-left:20px ; margin-top: 70px;">
+        Address-: Buttimori Bariyatu Ranchi Jharkhand Pincode-: 835217<br><br>
+        Email-:<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=divyakshi651@gmail.com"
+          style="text-decoration: none; color: black;">divyakshi651@gmail.com</a><br><br>
+        <a href="tel:+918928461696" style="text-decoration: none; color: black;">Mobile no.-: 8928461696</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="link">
+
+  <a href="https://www.youtube.com/channel/UC5QS7RIYET-6IyZiz2a1NIA"><i class="fa-brands fa-youtube me-4" style="transform: rotate(+90deg)"></i></a>
+  <a href="https://www.instagram.com/divyakshi651/"><i class="fab fa-instagram me-4" style="transform: rotate(+90deg)"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=100090272478981"><i class="fab fa-facebook me-4" style="transform: rotate(+90deg)" ></i></a>
+  <a href="https://twitter.com/DivyakshiSaw"><i class="fab fa-twitter me-4" style="transform: rotate(+100deg);"></i></a>
+
+
+</div>
+
+<div class="floating_btn">
+  <a target="_blank" href="https://wa.me/">
+    <div class="contact_icon">
+      
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+  </a>
+  <p class="text_icon">Talk to us?</p>
+</div>
+<div><app-footer></app-footer></div>

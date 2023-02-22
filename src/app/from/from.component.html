@@ -1,0 +1,89 @@
+<section>
+    <div class="container text-light">
+        <div class="row text-light">
+            <div class="col-lg-12 text-center">
+             
+                        <h1 mat-dialog-title class="text-light">Text Me</h1>
+                        <!-- <mat-icon [mat-dialog-close]="true" style="text-align:right">highlight_off</mat-icon> -->
+                 
+
+                <div mat-dialog-content>
+                    <form [formGroup]="Msgform" novalidate class="d-flex-center">
+                        <div class="example-container">
+
+                            <!-- input type Name -->
+                            <div class="text-light mt-2">
+                                <mat-form-field appearance="outline" class="text-light">
+                                    <mat-label class="text-light">Full Name</mat-label>
+                                    <input matInput class="text-light" formControlName="name">
+                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                    <!-- <mat-hint>Your Name</mat-hint> -->
+                                    <mat-error
+                                        *ngIf="Msgform.get('name')?.invalid && (Msgform.get('name')?.dirty || Msgform.get('name')?.touched) && Msgform.get('name')?.errors?.required">
+                                        name is required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <!-- input type email -->
+                            <div class="text-light mt-2">
+                                <mat-form-field appearance="outline" class="text-light">
+                                    <mat-label class="text-light">E-Mail</mat-label>
+                                    <input matInput class="text-light" formControlName="email">
+                                    <mat-icon matSuffix>alternate_email</mat-icon>
+                                    <!-- <mat-hint>Example@gmail.com</mat-hint> -->
+                                    <mat-error
+                                        *ngIf="!Msgform.get('email')?.errors?.required && (Msgform.get('email')?.errors?.pattern)">
+                                        Please enter a valid email address
+                                    </mat-error>
+                                    <mat-error
+                                        *ngIf="Msgform.get('email')?.invalid && (Msgform.get('email')?.dirty || Msgform.get('email')?.touched) && Msgform.get('email')?.errors?.required">
+                                        Email is required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div> <!-- input type Number -->
+
+                                <mat-form-field appearance="outline" class="text-light">
+                                  <mat-label class="text-light">Your Phone Number</mat-label>
+                                  <!-- <span matPrefix class="text-light">+91 &nbsp;</span> -->
+                                  <input matInput placeholder="Phone Number"  class="text-light" formControlName="PhoneNumber">
+                                  <mat-icon matSuffix class="text-light">call</mat-icon>
+                                  <!-- <mat-hint>91-8569741235</mat-hint> -->
+                                  <mat-error
+                                    *ngIf="!Msgform.get('PhoneNumber')?.errors?.required && (Msgform.get('PhoneNumber')?.errors?.pattern)">
+                                    Please enter valid Number
+                                  </mat-error>
+                                  <mat-error 
+                                    *ngIf="Msgform.get('PhoneNumber')?.invalid && (Msgform.get('PhoneNumber')?.dirty || Msgform.get('PhoneNumber')?.touched) && Msgform.get('PhoneNumber')?.errors?.required">
+                                    Phone number is <strong>required</strong>
+                                  </mat-error>
+                                </mat-form-field>
+                              </div>
+
+                            <!-- input type text -->
+                            <div class="text-light mt-2">
+                                <mat-form-field appearance="outline" class="text-light">
+                                    <mat-label class="text-light">Your Massage</mat-label>
+                                    <textarea matInput class="text-light" formControlName="text"></textarea>
+                                    <mat-icon matSuffix>chat</mat-icon>
+                                    <!-- <mat-hint>Your Msg</mat-hint> -->
+                                    <mat-error
+                                        *ngIf="Msgform.get('text')?.invalid && (Msgform.get('text')?.dirty || Msgform.get('text')?.touched) && Msgform.get('text')?.errors?.required">
+                                        Massage is required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <!-- button Submit -->
+                            <div class="mt-2">
+                                <button mat-stroked-button (click)="adddetail()" class="btn" style=" border-color: #04AA6D;
+                                color: #64ffda; width:100%;">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
