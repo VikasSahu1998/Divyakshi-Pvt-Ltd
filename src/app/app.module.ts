@@ -23,12 +23,14 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FromComponent } from './from/from.component';
 import { ToastrModule } from 'ngx-toastr';
+import { JobFromComponent } from './job-from/job-from.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     FromComponent,
+    JobFromComponent,
 
   ],
   imports: [

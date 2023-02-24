@@ -3,12 +3,12 @@
         <div class="row text-light">
             <div class="col-lg-12 text-center">
              
-                        <h1 mat-dialog-title class="text-light">Book Now</h1>
+                        <h1 mat-dialog-title class="text-light">Let's Work On it Together</h1>
                         <!-- <mat-icon [mat-dialog-close]="true" style="text-align:right">highlight_off</mat-icon> -->
                  
 
                 <div mat-dialog-content>
-                    <form [formGroup]="Msgform" novalidate class="d-flex-center">
+                    <form [formGroup]="Jobform" novalidate class="d-flex-center">
                         <div class="example-container">
 
                             <!-- input type Name -->
@@ -19,7 +19,7 @@
                                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                                     <mat-hint>Your Name</mat-hint>
                                     <mat-error
-                                        *ngIf="Msgform.get('name')?.invalid && (Msgform.get('name')?.dirty || Msgform.get('name')?.touched) && Msgform.get('name')?.errors?.required">
+                                        *ngIf="Jobform.get('name')?.invalid && (Jobform.get('name')?.dirty || Jobform.get('name')?.touched) && Jobform.get('name')?.errors?.required">
                                         name is required
                                     </mat-error>
                                 </mat-form-field>
@@ -31,17 +31,18 @@
                                     <mat-label class="text-light">E-Mail</mat-label>
                                     <input matInput class="text-light" formControlName="email">
                                     <mat-icon matSuffix>alternate_email</mat-icon>
-                                   
+                                    
                                     <mat-error
-                                        *ngIf="!Msgform.get('email')?.errors?.required && (Msgform.get('email')?.errors?.pattern)">
+                                        *ngIf="!Jobform.get('email')?.errors?.required && (Jobform.get('email')?.errors?.pattern)">
                                         Please enter a valid email address
                                     </mat-error>
                                     <mat-error
-                                        *ngIf="Msgform.get('email')?.invalid && (Msgform.get('email')?.dirty || Msgform.get('email')?.touched) && Msgform.get('email')?.errors?.required">
+                                        *ngIf="Jobform.get('email')?.invalid && (Jobform.get('email')?.dirty || Jobform.get('email')?.touched) && Jobform.get('email')?.errors?.required">
                                         Email is required
                                     </mat-error>
                                 </mat-form-field>
                             </div>
+
 
                             <div class="text-light"> <!-- input type Number -->
 
@@ -52,11 +53,11 @@
                                   <mat-icon matSuffix> call</mat-icon>
             
                                   <mat-error
-                                    *ngIf="!Msgform.get('PhoneNumber')?.errors?.required && (Msgform.get('PhoneNumber')?.errors?.pattern)">
+                                    *ngIf="!Jobform.get('PhoneNumber')?.errors?.required && (Jobform.get('PhoneNumber')?.errors?.pattern)">
                                     Please enter valid Number
                                   </mat-error>
                                   <mat-error
-                                    *ngIf="Msgform.get('PhoneNumber')?.invalid && (Msgform.get('PhoneNumber')?.dirty || Msgform.get('PhoneNumber')?.touched) && Msgform.get('PhoneNumber')?.errors?.required">
+                                    *ngIf="Jobform.get('PhoneNumber')?.invalid && (Jobform.get('PhoneNumber')?.dirty || Jobform.get('PhoneNumber')?.touched) && Jobform.get('PhoneNumber')?.errors?.required">
                                     Phone number is <strong>required</strong>
                                   </mat-error>
                                 </mat-form-field>
@@ -70,7 +71,7 @@
                                     <mat-icon matSuffix>chat</mat-icon>
                                     <mat-hint>Your Msg</mat-hint>
                                     <mat-error
-                                        *ngIf="Msgform.get('text')?.invalid && (Msgform.get('text')?.dirty || Msgform.get('text')?.touched) && Msgform.get('text')?.errors?.required">
+                                        *ngIf="Jobform.get('text')?.invalid && (Jobform.get('text')?.dirty || Jobform.get('text')?.touched) && Jobform.get('text')?.errors?.required">
                                         Massage is required
                                     </mat-error>
                                 </mat-form-field>

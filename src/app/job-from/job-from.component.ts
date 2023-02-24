@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { FromComponent } from '../from/from.component';
 
 import { ApiService } from '../shared/api.service';
-
 @Component({
-  selector: 'app-from',
-  templateUrl: './from.component.html',
-  styleUrls: ['./from.component.scss']
+  selector: 'app-job-from',
+  templateUrl: './job-from.component.html',
+  styleUrls: ['./job-from.component.scss']
 })
-export class FromComponent {
+export class JobFromComponent {
 
-  Msgform: FormGroup | any;
+  Jobform: FormGroup | any;
 
   constructor(private formbuilder: FormBuilder,private toastr: ToastrService,
     private dialogref: MatDialogRef<FromComponent>,
@@ -20,7 +20,7 @@ export class FromComponent {
 
 
   ngOnInit(): void {
-    this.Msgform = new FormGroup({
+    this.Jobform = new FormGroup({
       name: new FormControl('', [Validators.required,]),
       email: new FormControl('', [Validators.required, Validators.email]),
       PhoneNumber: new FormControl('', [Validators.required, Validators.nullValidator]),
@@ -31,13 +31,13 @@ export class FromComponent {
 
   adddetail() {
     // console.log(this.Msgform.value)
-    if (this.Msgform.valid) {
-      this.api.PostContact(this.Msgform.value)
+    if (this.Jobform.valid) {
+      this.api.PostJob(this.Jobform.value)
         .subscribe({
           next: (res) => {
             this.toastr.success('details added successfully', 'successfully', { timeOut: 2000, });
             // alert("details added successfully ");
-            this.Msgform.reset();
+            this.Jobform.reset();
             this.dialogref.close('save');
           },
           error: () => {
@@ -47,7 +47,5 @@ export class FromComponent {
         })
     }
   }
-
-
 
 }

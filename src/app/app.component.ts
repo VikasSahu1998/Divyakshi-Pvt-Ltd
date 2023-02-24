@@ -3,8 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialog } from '@angular/material/dialog';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { FromComponent } from './from/from.component';
+import { JobFromComponent } from './job-from/job-from.component';
 import { ApiService } from './shared/api.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +12,13 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
 
   contactForm: FormGroup | any;
 
-  constructor(private formbuilder: FormBuilder, private api: ApiService,public dialog: MatDialog,private toastr: ToastrService) { }
+  constructor(private formbuilder: FormBuilder, private api: ApiService,public dialog: MatDialog) { }
 
 
 
@@ -36,17 +39,18 @@ export class AppComponent implements OnInit {
       this.api.PostContact(this.contactForm.value)
         .subscribe({
           next: (res) => {
-            // alert("details added successfully");
-            this.toastr.success('details added successfully', 'successfully', { timeOut: 2000, });
+            alert("details added successfully");
             this.contactForm.reset();
           },
           error: () => {
-            // alert("Something went wrong ")
-            this.toastr.error('Something is broken', 'Major Error In Server', { timeOut: 2000, });
+            alert("Something went wrong ")
           }
         })
     }
   }
+
+
+
 
   cards = [
     {
@@ -126,7 +130,7 @@ export class AppComponent implements OnInit {
     },
     {
       Title: 'NEWSPAPER AND MAGAZINE ADVERTISEMENTS',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'We create attractive newspaper and magazine ads that will surely attract the targeted audiences ',
     },
     {
       Title: 'SOCIAL MEDIA GRAPHICS',
@@ -134,27 +138,27 @@ export class AppComponent implements OnInit {
     },
     {
       Title: 'DIGITAL ADVERTISEMENTS',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'We help you market your business through various social media channels which will make your business reach to a large number of audiences. ',
     },
     {
       Title: 'EMAIL MARKETING TEMPLATES',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'We customize email templates that will best suit your business to make it look professional and attractive Catalogs',
     },
     {
       Title: 'CATALOGS',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'We create a systematic catalogue that will contain all the information that you would want us to carry in your catalogs with the touch of creativity.',
     },
     {
       Title: 'CORPORATE DESIGN',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'Corporate Designs are the visual and linguistic staging of the brand and we offer this service for the clients who are seeking for amazing corporate designs.',
     },
     {
       Title: 'PRODUCT DESIGNER',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'We design products according to the niche and give it a royal touch and make it look unique.Web Page Design',
     },
     {
       Title: 'WEB PAGE DESIGN',
-      Description: 'Some quick example text to build on the card title and make up the bulk of the cards content Some quick example text to build on the card title and make up the bulk of the cards content',
+      Description: 'Our web design team creates attractive and user-friendly designs with variety of themes that will attract customers to your site.',
     }
   ]
 
@@ -165,50 +169,57 @@ export class AppComponent implements OnInit {
       Description: 'We are one of the top wedding photographer & Videographer  in Northeast India including Jharkhand and Bihar Weddings are a time of customs, rituals and important events as well as a journey of discovery and the start of a new partnership. To capture these moments something beautiful and timeless is needed. With our professional  photographer & Videographer Divyakshi will create lovely memories that will last forever',
       Description1: 'Name: DilRanjan Saw',
       Description2: 'Age: 30',
-      Description3: 'Occupation: Professional Graphic Designer',
-      Description4: 'We are one of the top wedding photographer & Videographer  in Northeast India including Jharkhand and Bihar Weddings are a time of customs, rituals and important events as well as a journey of discovery and the start of a new partnership. To capture these moments something beautiful and timeless is needed. With our professional  photographer & Videographer Divyakshi will create lovely memories that will last forever',
+      Description3: 'Occupation: Professional Photographer, videographer, Graphic Designer',
+      
     }
   ]
 
 
-  loop = [
-    {
-      img: "/assets/wed3.jpg",
-      head1: "HIRE PROFESSIONAL PHOTOGRAPHER",
-      head2: "EVERYTIME EVERYWHERE ",
-      li: "Wedding Photography",
-      li1: "Fashion Photography",
-      li2: "Travel Photography",
-      li3: "Lifestyle Photography",
-      btn:"Book Now"
-    },
-    {
-      img: "/assets/wedd.jpg",
-      head1: "HIRE  VIDEOGRAPHER EVERYTIME",
-      head2: " EVERYWHERE WEDDING VIDEOGRAPHY",
-      li: "EVENT VIDEOGRAPHY",
-      li1: "BRAND AWARENESS VIDEOS",
-      li2: "PROMOTIONAL VIDEOS",
-      li3: "WEBINARS",
-      li4: "DRONE VIDEOGRAPHY",
-      btn:"Book Now"
-    },
-    {
-      img: "/assets/designer.jpeg",
-      head1: "HIRE PROFESSIONAL DESIGNER",
-      head2: "EVERYTIME EVERYWHERE",
-      li: "LOGO DESIGN",
-      li1: "BUSINESS CARD DESIGN",
-      li2: "WEDDING CARD DESIGN",
-      li3: "WEB PAGE DESIGN",
-      li4: "PRODUCT DESIGNER",
-      btn:"Book Now"
-    },
-  ]
+  // loop = [
+  //   {
+  //     img: "/assets/wed3.jpg",
+  //     head1: "HIRE PROFESSIONAL PHOTOGRAPHER",
+  //     head2: "EVERYTIME EVERYWHERE ",
+  //     li: "Wedding Photography",
+  //     li1: "Fashion Photography",
+  //     li2: "Travel Photography",
+  //     li3: "Lifestyle Photography",
+  //     btn:"Book Now"
+  //   },
+  //   {
+  //     img: "/assets/wedd.jpg",
+  //     head1: "HIRE  VIDEOGRAPHER EVERYTIME",
+  //     head2: " EVERYWHERE WEDDING VIDEOGRAPHY",
+  //     li: "EVENT VIDEOGRAPHY",
+  //     li1: "BRAND AWARENESS VIDEOS",
+  //     li2: "PROMOTIONAL VIDEOS",
+  //     li3: "WEBINARS",
+  //     li4: "DRONE VIDEOGRAPHY",
+  //     btn:"Book Now"
+  //   },
+  //   {
+  //     img: "/assets/designer.jpeg",
+  //     head1: "HIRE PROFESSIONAL DESIGNER",
+  //     head2: "EVERYTIME EVERYWHERE",
+  //     li: "LOGO DESIGN",
+  //     li1: "BUSINESS CARD DESIGN",
+  //     li2: "WEDDING CARD DESIGN",
+  //     li3: "WEB PAGE DESIGN",
+  //     li4: "PRODUCT DESIGNER",
+  //     btn:"Book Now"
+  //   },
+  // ]
 
 
   openDialog() {
     this.dialog.open(FromComponent, {
+      width: 'auto',
+    }).afterClosed()
+  }
+
+
+  openDialogJobFrom() {
+    this.dialog.open(JobFromComponent, {
       width: 'auto',
     }).afterClosed()
   }
