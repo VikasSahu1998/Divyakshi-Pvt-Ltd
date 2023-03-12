@@ -1,0 +1,55 @@
+<div class="container">
+    <H1 ALIGN="CENTER" class="mt-5"><B id="service" id="VIDEOGRAPHY"><u>VIDEOGRAPHY SERVICES</u></B></H1>
+    <div class="row row-cols-1 row-cols-md-3 g-4  pb-5 mt-1">
+      <div class="col" *ngFor="let card of cards">
+        <mat-card class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">
+              <mat-card-content>
+                <h1>{{card.Title}}</h1>
+              </mat-card-content>
+            </h2>
+            <p class="card-text">{{card.Description}}</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <H1 ALIGN="CENTER" class="mt-5"><B id="Photography"><u>PHOTOGRAPHY</u> </B></H1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+      <div class="col" *ngFor="let card1 of cards1">
+        <div class="card h-100 text-center">
+          <mat-card class="card-body">
+            <img src="{{card1.image}}" class="cardimg">
+            <h2 class="card-title">
+              <h1>{{card1.Title}}</h1>
+            </h2>
+            <p class="card-text">{{card1.Description}}</p>
+
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <H1 ALIGN="CENTER" class="mt-5"><B id="Designing"><U>DESIGNING SERVICES</U></B></H1>
+    <div class="row row-cols-1 row-cols-md-3 g-4  pb-5 mt-1">
+      <div class="col" *ngFor="let design of designing">
+        <mat-card class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">
+              <mat-card-content>
+                <h1>{{design.Title}}</h1>
+              </mat-card-content>
+            </h2>
+            <p class="card-text">{{design.Description}}</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+

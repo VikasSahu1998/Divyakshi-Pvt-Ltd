@@ -1,0 +1,6 @@
+mat-card:hover {
+    transform: scale(1.1);
+  }
+  mat-card {
+    transition: transform 0.5s;
+  }

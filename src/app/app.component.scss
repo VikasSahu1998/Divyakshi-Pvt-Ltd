@@ -48,7 +48,6 @@ mat-form-field {
   text-transform: capitalize;
   transition: all .1s ease-in-out;
 }
-
 .map {
   height: 500px;
   width: 400px;
@@ -231,3 +230,9 @@ word-spacing: 15px;
 }
 
 
+@media only screen and (max-width: 600px) {
+
+  .navbar-brand img {
+    width: 14%;
+  }
+}

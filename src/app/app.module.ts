@@ -24,6 +24,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FromComponent } from './from/from.component';
 import { ToastrModule } from 'ngx-toastr';
 import { JobFromComponent } from './job-from/job-from.component';
+import { AboutComponent } from './about/about.component';
+import { ServiceComponent } from './service/service.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { JobFromComponent } from './job-from/job-from.component';
     FooterComponent,
     FromComponent,
     JobFromComponent,
+    AboutComponent,
+    ServiceComponent,
+    ContactComponent,
 
   ],
   imports: [
